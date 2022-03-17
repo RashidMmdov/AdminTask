@@ -6,17 +6,15 @@ namespace UzersClass_Task
 {
     internal class Admin : User
     {
-        public bool isSuperAdmin = true;
+        public bool isSuperAdmin;
         public string Section;
-        public Admin(string Section, string username, string password) : base(username, password)
+        public Admin(string Section, bool isSuperAdmin, string username, string password) : base(username, password)
         {
             this.Section = Section;
+            this.isSuperAdmin = isSuperAdmin;
         }
-        
-
-        public void Info()
+        public void FullInfo()
         {
-            
             if (isSuperAdmin == true)
             {
                 Console.WriteLine($"UserName: {UserName}");
@@ -26,9 +24,12 @@ namespace UzersClass_Task
             else
             {
                 Console.WriteLine(UserName);
+
             }
+
 
         }
 
     }
 }
+
